@@ -1,7 +1,7 @@
 {
   "name": "elv",
   "longName": "Elvis operator functionality for JavaScript.",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "dependencies": { },
   "devDependencies": {
     "chai": "^3.5.0",
