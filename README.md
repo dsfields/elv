@@ -1,5 +1,7 @@
 # elv
 
+Elvis operator functionality for JavaScript.
+
 With the absence of an [Elvis (existential) operator](https://en.wikipedia.org/wiki/Elvis_operator) in JavaScript, I often find myself writing the same checks to see if something is `undefined` over and over and over again.  The `||` operator in JavaScript is generally inadequate for this purpose, because it fails to account for Booleans.  So, I decided to create a small module to clean up the redundant code.
 
 ## API

@@ -17,6 +17,7 @@
     "truthy",
     "exists"
   ],
+  "license": "MIT",
   "main": "./lib",
   "private": false,
   "repository": {
