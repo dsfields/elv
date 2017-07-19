@@ -49,11 +49,21 @@ describe('#elv', () => {
       assert.isFalse(result);
     });
 
-    it('should return result of function if found is function', () => {
+    it('should return result of function if found is function and last', () => {
       const a = undefined;
-      const b = 'b';
-      const bfunc = () => b;
-      const result = elv.coalesce(a, bfunc);
+      const b = null;
+      const c = 'c';
+      const cfunc = () => c;
+      const result = elv.coalesce(a, b, cfunc);
+      assert.strictEqual(result, c);
+    });
+
+    it('should not execute functions unless they are the last arg', () => {
+      const a = null;
+      const b = () => 'b';
+      const c = () => 'c';
+      const result = elv.coalesce(a, b, c);
+      assert.isFunction(result);
       assert.strictEqual(result, b);
     });
 

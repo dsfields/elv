@@ -1,0 +1,13 @@
+.eslintignore
+.eslintrc
+.eslintrc.js
+.git
+.gitignore
+.nyc_output
+.travis.yml
+CHANGELOG.md
+coverage
+CONTRIBUTING.md
+node_modules
+npm-debug.log
+test

@@ -10,7 +10,7 @@ With the absence of an [Elvis (existential) operator](https://en.wikipedia.org/w
 
 Determines whether or not the argument `obj` is _truthy_.  Returns `false` if `obj` is `undefined` or `null`, or will otherwise returns `true`.
 
-##### Example:
+__Example:__
 ```js
 const elv = require('elv');
 
@@ -31,7 +31,7 @@ console.log(elv(qux)); // false
 
 Accepts a series of parameters, and returns the first argument that is _truthy_.
 
-##### Example:
+__Example:__
 ```js
 const elv = require('elv');
 const coalesce = elv.coalesce;
@@ -46,9 +46,10 @@ console.log(result); // hello world
 ```
 
 #### Deferred Function Execution
-The `elv.coalesce()` function will execute `function` arguments, and return its value if it is found to be the first _truthy_ argument in the series.  The idea is to ensure that potentially expensive functions to execute are not run unless absolutely necessary.
 
-##### Example
+If the final argument passed to `elv.coalesce()` is reached, and it is a `function`, then it will evaluate that function and return its result.  The idea is to ensure that potentially expensive functions to execute are not run unless absolutely necessary.
+
+__Example__
 ```js
 const elv = require('elv');
 const coalesce = elv.coalesce;

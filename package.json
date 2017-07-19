@@ -1,12 +1,17 @@
 {
   "name": "elv",
   "longName": "Elvis operator functionality for JavaScript.",
-  "version": "1.0.1",
+  "version": "2.0.0",
   "dependencies": { },
   "devDependencies": {
-    "chai": "^3.5.0",
-    "istanbul": "^0.4.5",
-    "mocha": "^3.0.2"
+    "chai": "~3.5.0",
+    "eslint": "^3.13.1",
+    "eslint-config-airbnb": "^14.0.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^3.0.2",
+    "eslint-plugin-react": "^6.9.0",
+    "mocha": "^3.2.0",
+    "nyc": "^10.2.0"
   },
   "keywords": [
     "elvis",
@@ -25,7 +30,7 @@
     "url": "https://github.com/dsfields/elv"
   },
   "scripts": {
-    "lint": "eslint ./**/*.js",
-    "test": "NODE_ENV=test istanbul cover _mocha tests/unit/**/**/*.js"
+    "lint": "eslint ./*",
+    "test": "NODE_ENV=test nyc --reporter=lcov  --reporter=text --check-coverage --lines 100 --functions 100 --branches 100 mocha --recursive ./test"
   }
 }
