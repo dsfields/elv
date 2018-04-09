@@ -143,6 +143,8 @@ class Bar {
 
 In addition to performing an existential check, determines if a given string, array or object is not empty.  An empty object is one that has no properties.
 
+__Parameters__
+
 * `val`: _(required)_ the value on which to perform an existential and populated check.
 
 __Examples:__
