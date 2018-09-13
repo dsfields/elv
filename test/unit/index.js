@@ -119,6 +119,42 @@ describe('#elv', () => {
   });
 
 
+  describe('#ncoalesce', () => {
+    it('returns first value if is, and next is not', function() {
+      const a = 'a';
+      const b = undefined;
+      const result = elv.ncoalesce(a, b);
+      assert.strictEqual(result, a);
+    });
+
+    it('returns first value if is, and next is', function() {
+      const a = 'a';
+      const b = 'b';
+      const result = elv.ncoalesce(a, b);
+      assert.strictEqual(result, a);
+    });
+
+    it('returns next value if is, and first is not', function() {
+      const a = undefined;
+      const b = 'b';
+      const result = elv.ncoalesce(a, b);
+      assert.strictEqual(result, b);
+    });
+
+    it('returns first if first is Boolean value false', function() {
+      const a = false;
+      const b = 'b';
+      const result = elv.ncoalesce(a, b);
+      assert.isFalse(result);
+    });
+
+    it('returns undefined if all not', function() {
+      const result = elv.ncoalesce(undefined, undefined, null);
+      assert.isUndefined(result);
+    });
+  });
+
+
   describe('#populated', function() {
     it('returns false if val undefined', function() {
       const result = elv.populated(undefined);

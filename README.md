@@ -139,6 +139,28 @@ class Bar {
 }
 ```
 
+### `elv.ncoalesce(...val)`
+
+Accepts a series of parameters, and returns the first argument that is _defined_.  Works just like [elv.coalesce()](#elvcoalesceval), but it does not lazily execute functions.
+
+__Parameters__
+
+* `...val`: _(required)_ the values to coalesce.
+
+__Example:__
+```js
+const elv = require('elv');
+const coalesce = elv.coalesce;
+
+const foo = undefined;
+const bar = null;
+const baz = 'hello world';
+const qux = true;
+
+const result = coalesce(foo, bar, baz, qux);
+console.log(result); // hello world
+```
+
 ### `elv.populated(val)`
 
 In addition to performing an existential check, determines if a given string, array or object is not empty.  An empty object is one that has no properties.
